@@ -116,7 +116,85 @@ pub fn sum_x2_m_y2(numbers1: &[f64], numbers2: &[f64]) -> f64 {
     let mut result: f64 = 0.0;
     
     for (i, num1) in numbers1.iter().enumerate() {
-        result += (num1 * num1) - numbers2[i] * numbers2[i];
+        result += (num1 * num1) - (numbers2[i] * numbers2[i]);
+    }  
+
+    result
+}
+
+// sum_x2_p_y2 function returns the sum of the squares of the elements in the first array plus the sum of the squares of the elements in the second array
+//
+// Arguments
+//
+// * `numbers1` - The first array of numbers.
+//
+// * `numbers2` - The second array of numbers.
+//
+// Returns
+//
+// * A number representing the sum of the squares of the first array plus the sum of the squares of the second array.
+//
+// Note:
+// 
+// * Length of numbers1 and numbers2 should be equal
+//
+// Examples
+//
+// ```
+// use xrs::calc::sum_x2_p_y2;
+//
+// let numbers1 = [1.0, 2.0, 3.0, 4.0, 5.0];
+// let numbers2 = [1.0, 2.0, 3.0, 4.0, 5.0];
+// let result = sum_x2_p_y2(&numbers1, &numbers2);
+// assert_eq!(result, 110.0);
+// ```
+pub fn sum_x2_p_y2(numbers1: &[f64], numbers2: &[f64]) -> f64 {
+    if numbers1.len() != numbers2.len() {
+        panic!("Length of numbers1 and numbers2 should be equal");
+    }
+    let mut result: f64 = 0.0;
+    
+    for (i, num1) in numbers1.iter().enumerate() {
+        result += (num1 * num1) + (numbers2[i] * numbers2[i]);
+    }  
+
+    result
+}
+
+// sum_x_m_y2 function returns the sum of squares of differences of corresponding values in two arrays.
+//
+// Arguments
+//
+// * `numbers1` - The first array of numbers.
+//
+// * `numbers2` - The second array of numbers.
+//
+// Returns
+//
+// * A number representing the sum of the squares of the first array plus the sum of the squares of the second array.
+//
+// Note:
+// 
+// * Length of numbers1 and numbers2 should be equal
+//
+// Examples
+//
+// ```
+// use xrs::calc::sum_x_m_y2;
+//
+// let numbers1 = [1.0, 2.0, 3.0, 4.0, 5.0];
+// let numbers2 = [2.0, 3.0, 4.0, 5.0, 6.0];
+// let result = sum_x_m_y2(&numbers1, &numbers2);
+// assert_eq!(result, 5.0);
+// ```
+pub fn sum_x_m_y2(numbers1: &[f64], numbers2: &[f64]) -> f64 {
+    if numbers1.len() != numbers2.len() {
+        panic!("Length of numbers1 and numbers2 should be equal");
+    }
+    let mut result: f64 = 0.0;
+    
+    for (i, num1) in numbers1.iter().enumerate() {
+        result += (num1 - numbers2[i]) * (num1 - numbers2[i]);
     }  
 
     result
