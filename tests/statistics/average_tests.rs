@@ -43,7 +43,7 @@ mod tests {
         ];
 
         for (data, expected) in &test_data {
-            let now = Instant::now();
+            let now: Instant = Instant::now();
             let result = round_to_decimal(avedev(data), 2);
             let elapsed = now.elapsed();
             println!("avedev({:?}) = {} [{:?}]", data, result, elapsed);
