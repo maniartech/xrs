@@ -9,10 +9,7 @@ mod tests {
 
     #[test]
     fn test_abs() {
-        let test_data: [TestTuple; 2] = [
-            (-5.0, 5.0),
-            (5.0, 5.0),
-        ];
+        let test_data: [TestTuple; 2] = [(-5.0, 5.0), (5.0, 5.0)];
 
         for (data, expected) in &test_data {
             let now = Instant::now();
