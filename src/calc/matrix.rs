@@ -75,8 +75,7 @@ pub fn m_determ(matrix: &Vec<Vec<f64>>) -> f64 {
     let mut det: f64 = 0.0;
 
     for i in 0..len {
-        let minor: Vec<Vec<f64>> = m_minor(&matrix, 0, i);
-        let minor_det: f64 = m_determ(&minor);
+        let minor_det: f64 = m_determ(&m_minor(&matrix, 0, i));
         det += matrix[0][i] * minor_det * if i % 2 == 0 { 1.0 } else { -1.0 };
     }
     det

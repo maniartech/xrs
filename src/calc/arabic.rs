@@ -2,9 +2,9 @@
 pub fn arabic(roman: &str) -> i32 {
     let mut result: i32 = 0;
     for i in 0..roman.len() {
-        let current = roman.chars().nth(i).unwrap();
-        let next = roman.chars().nth(i + 1).unwrap_or(' ');
-        let current_value = match current {
+        let current: char = roman.chars().nth(i).unwrap();
+        let next: char = roman.chars().nth(i + 1).unwrap_or(' ');
+        let current_value: i32 = match current {
             'I' => {
                 if next == 'V' || next == 'X' {
                     -1
