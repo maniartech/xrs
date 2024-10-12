@@ -1,5 +1,7 @@
 pub mod arabic;
 pub mod base;
+pub mod ceiling;
+pub mod divisors;
 pub mod matrix;
 pub mod roman;
 pub mod series;
@@ -9,6 +11,8 @@ pub mod trig;
 
 pub use arabic::*;
 pub use base::*;
+pub use ceiling::*;
+pub use divisors::*;
 pub use matrix::*;
 pub use roman::*;
 pub use series::*;
